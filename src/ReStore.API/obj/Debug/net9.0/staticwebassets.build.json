@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "fR6GSsDADhWmkXDvIVL8hgXt6BwtzhXNrirUQQjzTpo=",
+  "Source": "ReStore.API",
+  "BasePath": "_content/ReStore.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
