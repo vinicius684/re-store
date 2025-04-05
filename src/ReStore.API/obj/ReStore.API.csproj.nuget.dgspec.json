@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\Restore\\src\\ReStore.API\\ReStore.API.csproj": {}
+    "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\ReStore\\src\\ReStore.API\\ReStore.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\Restore\\src\\ReStore.API\\ReStore.API.csproj": {
+    "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\ReStore\\src\\ReStore.API\\ReStore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\Restore\\src\\ReStore.API\\ReStore.API.csproj",
+        "projectUniqueName": "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\ReStore\\src\\ReStore.API\\ReStore.API.csproj",
         "projectName": "ReStore.API",
-        "projectPath": "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\Restore\\src\\ReStore.API\\ReStore.API.csproj",
+        "projectPath": "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\ReStore\\src\\ReStore.API\\ReStore.API.csproj",
         "packagesPath": "C:\\Users\\vpinh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\Restore\\src\\ReStore.API\\obj\\",
+        "outputPath": "C:\\Users\\vpinh\\Desktop\\.Net, React e Redux\\ReStore\\src\\ReStore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
