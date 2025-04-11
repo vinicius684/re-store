@@ -34,13 +34,13 @@ export default function ProductCard({ product }: Props) {
                 </Typography>
                 <Typography
                     variant="h6"
-                    sx={{ color: 'socondary.main' }}
+                    sx={{ color: 'secondary.main' }}
                 >
                     ${(product.price / 100).toFixed(2)}
                 </Typography>
             </CardContent>
             <CardActions
-                sx={{ justifyContext: 'space-between' }}
+                sx={{ justifyContent: 'space-between' }}
             >
                 <Button>Add to Cart</Button>
                 <Button>View</Button>
