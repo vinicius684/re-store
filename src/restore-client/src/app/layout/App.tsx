@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../features/catalog/Catalog";
+import { Box, Button, Container, Typography } from "@mui/material";
 
 
 
@@ -13,7 +14,7 @@ function App() {
       .then(data => setProducts(data))
   }, [])
 
-  const addProducts = () => {
+  const addProduct = () => {
     setProducts(prevState => [...prevState,
     {
       id: prevState.length + 1,
@@ -28,10 +29,13 @@ function App() {
   }
 
   return (
-    <div>
-      <h1 style={{ color: 'red' }}>Re-store</h1>
-      <Catalog products={products} addProduct={addProducts}/>
-    </div>
+    <Container maxWidth='xl'>
+      <Box display='flex' justifyContent='center' gap={3} marginY={3}>
+        <Typography variant='h4'>Re-store</Typography>
+        <Button variant="contained" onClick={addProduct}>Add Product</Button>
+      </Box>
+      <Catalog products={products} />
+    </Container>
   )
 }
 

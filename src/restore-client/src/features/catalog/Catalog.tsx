@@ -1,20 +1,15 @@
 import { Product } from "../../app/models/product"
+import ProductList from "./ProductList";
 
 type Props = {
   products: Product[];
-  addProduct: () => void;
 }
 
-export default function Catalog({products, addProduct}: Props) {
+export default function Catalog({products}: Props) {
   return (
     <>
-      <ul>
-        {products.map((item, index) => (
-          <li key={index}> {item.name} - {item.price} -  {item.description}</li>
-        ))}
-      </ul>
-      <button onClick={addProduct}>Add Product</button>
-
+      <ProductList products={products}/>
+      
     </>
   )
 }
