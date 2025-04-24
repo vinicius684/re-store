@@ -2,6 +2,7 @@ import { configureStore, legacy_createStore } from "@reduxjs/toolkit";
 import counterReducer, { counterSlice } from "../../features/contact/counterReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { catalogApi } from "../../features/catalog/catalogApi";
+import { uiSlice } from "../layout/uiSlice";
 
 
 export function configureTheStore(){
@@ -12,7 +13,8 @@ export function configureTheStore(){
 export const store = configureStore({
     reducer:{
         [catalogApi.reducerPath] : catalogApi.reducer,
-        counter: counterSlice.reducer
+        counter: counterSlice.reducer,
+        ui: uiSlice.reducer
     },
     //We need this middleware because it is responsible for actually handling the API request.
     middleware: (getDefaultMiddleware) =>
