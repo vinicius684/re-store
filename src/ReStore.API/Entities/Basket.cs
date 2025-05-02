@@ -5,7 +5,7 @@ namespace ReStore.API.Entities;
 public class Basket
 {
     public int Id { get; set; }
-    public int BasketId { get; set; } //We will store this value as a cookie in the user's browser, this way we persist it on the client side effectively.
+    public required string BasketId { get; set; } //We will store this value as a cookie in the user's browser, this way we persist it on the client side effectively.
     public List<BasketItem> Items {get;set; } = [];
 
     public void AddItem(Product product, int quantity)
@@ -34,12 +34,14 @@ public class Basket
 
     public void RemoveItem(int productId, int quantity)
     {
-        if(quantity <= 0) throw new ArgumentException("Quantity should be greater than zero", nameof(quantity));
+        if(quantity <= 0) throw new ArgumentException("Quantity should be greater than zero", 
+        nameof(quantity));
 
-        var Item = FindItem(productId);
-        if(Item == null) return;
+        var item = FindItem(productId);
+        if(item == null) return;
 
-        Item.Quantity -= quantity;       
+        item.Quantity -= quantity;    
+        if (item.Quantity <= 0) Items.Remove(item);   
     }
 
     private BasketItem? FindItem(int productId)

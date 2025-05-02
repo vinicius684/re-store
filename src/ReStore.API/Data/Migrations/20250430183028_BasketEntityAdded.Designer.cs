@@ -10,7 +10,7 @@ using ReStore.API.Data;
 namespace ReStore.API.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20250430010735_BasketEntityAdded")]
+    [Migration("20250430183028_BasketEntityAdded")]
     partial class BasketEntityAdded
     {
         /// <inheritdoc />
@@ -25,8 +25,9 @@ namespace ReStore.API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("BasketId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("BasketId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 

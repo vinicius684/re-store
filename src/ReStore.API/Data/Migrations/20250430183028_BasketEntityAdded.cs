@@ -16,7 +16,7 @@ namespace ReStore.API.Data.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    BasketId = table.Column<int>(type: "INTEGER", nullable: false)
+                    BasketId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
