@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { catalogApi } from "../../features/catalog/catalogApi";
 import { uiSlice } from "../layout/uiSlice";
 import { errorApi } from "../../features/about/erroApi";
+import { basketApi } from "../../features/basket/basketApi";
 
 
 export function configureTheStore(){
@@ -15,12 +16,17 @@ export const store = configureStore({
     reducer:{
         [catalogApi.reducerPath] : catalogApi.reducer,
         [errorApi.reducerPath]: errorApi.reducer,
+        [basketApi.reducerPath]: basketApi.reducer,
         counter: counterSlice.reducer,
         ui: uiSlice.reducer
     },
     //We need this middleware because it is responsible for actually handling the API request.
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(catalogApi.middleware, errorApi.middleware)
+        getDefaultMiddleware().concat(
+            catalogApi.middleware,
+            errorApi.middleware,
+            basketApi.middleware
+        )
 })
 
 //
