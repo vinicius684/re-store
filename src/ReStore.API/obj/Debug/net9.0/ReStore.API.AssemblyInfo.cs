@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReStore.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af028a21563e2c54452ebfc9429639ef8e99ea5b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ab8974b5d222c7a50ed61b020ee03df78ae3ad1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReStore.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReStore.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
