@@ -2,15 +2,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReStore.API.Data;
 using ReStore.API.Entities;
+using ReStore.API.Extensions;
 
 namespace ReStore.API.Controllers
 {
     public class ProductsController(StoreContext context) : BaseApiController //use of primary constructor
     {
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<Product>>> GetProducts(string orderBy)
         {
-            return await context.Products.ToListAsync();
+            var query = context.Products
+                .Sort(orderBy)
+                .AsQueryable();
+
+            return await query.ToListAsync();
         }
 
         [HttpGet("{id}")] // api/products/2
