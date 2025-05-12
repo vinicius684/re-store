@@ -15,4 +15,13 @@ public static class ProductExtensions
         };
         return query;
     }
+
+    public static IQueryable<Product> Search(this IQueryable<Product> query, string? searchTerm)
+    {
+        if (string.IsNullOrEmpty(searchTerm)) return query;
+
+        var lowerCaseSeatchTerm = searchTerm.Trim().ToLower();
+
+        return query.Where(x => x.Name.ToLower().Contains(lowerCaseSeatchTerm));
+    }
 }
