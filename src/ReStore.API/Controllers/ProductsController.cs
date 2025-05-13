@@ -3,18 +3,19 @@ using Microsoft.EntityFrameworkCore;
 using ReStore.API.Data;
 using ReStore.API.Entities;
 using ReStore.API.Extensions;
+using ReStore.API.RequestHelpers;
 
 namespace ReStore.API.Controllers
 {
     public class ProductsController(StoreContext context) : BaseApiController //use of primary constructor
     {
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts(string? orderBy, 
-            string searchTerm)
+        public async Task<ActionResult<List<Product>>> GetProducts([FromQuery]ProductParams productParams)
         {
             var query = context.Products
-                .Sort(orderBy)
-                .Search(searchTerm)
+                .Sort(productParams.OrderBy)
+                .Search(productParams.SearchTerm)
+                .Filter(productParams.Brands, productParams.Types)
                 .AsQueryable();
 
             return await query.ToListAsync();
