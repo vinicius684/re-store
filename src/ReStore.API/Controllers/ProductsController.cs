@@ -17,8 +17,13 @@ namespace ReStore.API.Controllers
                 .Search(productParams.SearchTerm)
                 .Filter(productParams.Brands, productParams.Types)
                 .AsQueryable();
+            
+            var products = await PagedList<Product>.ToPagedList(query, 
+                productParams.PageNumber, productParams.PageSize);
 
-            return await query.ToListAsync();
+            Response.AddPaginationHeader(products.Metadata);
+
+            return products;
         }
 
         [HttpGet("{id}")] // api/products/2
